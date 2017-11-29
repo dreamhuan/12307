@@ -1,0 +1,11 @@
+# IDEA
+.idea/
+*.iml
+# vscode
+.vscode
+# lib
+node_modules/
+# webpack
+build/
+# test report
+coverage/

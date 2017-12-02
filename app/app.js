@@ -31,3 +31,5 @@ const app = angular.module('app',
 import 'bootstrap/dist/css/bootstrap.css';
 import 'sweetalert2/dist/sweetalert2.css'
 import './styles/style.less';
+import './fonts/iconfont.css';
+import './styles/orderDetails.css';

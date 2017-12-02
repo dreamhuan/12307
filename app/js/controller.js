@@ -7,5 +7,6 @@ const app = angular.module('app.controller', [])
         $scope.hello = 'hello world';
     })
 
-;
+    .controller('orderDetailsCtrl', function ($scope) {
+    });
 export default app.name;

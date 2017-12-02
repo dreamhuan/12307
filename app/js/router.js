@@ -11,6 +11,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             template: require('../templates/home.html'),
             controller: 'homeCtrl'
         })
+        .state('orderDetails', {
+            url: '/orderDetails',
+            template: require('../templates/orderDetails.html'),
+            controller: 'orderDetailsCtrl'
+        })
 
 });
 export default app.name;

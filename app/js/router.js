@@ -76,6 +76,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             template: require('../templates/login.html'),
             controller: 'loginCtrl'
         })
+        .state('addPassenger', {
+            url: '/addPassenger',
+            template: require('../templates/addPassenger.html'),
+            controller: 'addPassengerCtrl'
+        })
+        .state('editPassenger', {
+            url: '/editPassenger',
+            template: require('../templates/editPassenger.html'),
+            controller: 'editPassengerCtrl'
+        })
 
 });
 

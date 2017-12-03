@@ -31,7 +31,21 @@ const app = angular.module('app',
 //引入css
 import 'bootstrap/dist/css/bootstrap.css';
 import 'sweetalert2/dist/sweetalert2.css'
+
 import './styles/style.less';
 import './fonts/iconfont.css';
-import './styles/orderDetails.css';
+
+import './styles/searchMsg.less';
+import './styles/searchRes.less';
+import './styles/checkOrder.less';
+import './styles/passengerList.less';
+import './styles/newPassenger.less';
+import './styles/checkPay.less';
+import './styles/payChoice.less';
+import './styles/orderDetail.less';
+import './styles/checkRefund.less';
+import './styles/refundSuccess.less';
+import './styles/register.less';
+import './styles/checkReg.less';
+import './styles/login.less';
 

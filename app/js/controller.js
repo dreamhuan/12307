@@ -1,10 +1,12 @@
 import angular from 'angular';
 import swal from 'sweetalert2'
+import $ from 'jquery';
 
 const app = angular.module('app.controller', [])
 
     .controller('testCtrl', function ($scope) {
         $scope.hello = 'hello world';
+        console.log($.fn);
     })
 
     .controller('searchMsgCtrl', function ($scope) {
@@ -55,7 +57,7 @@ const app = angular.module('app.controller', [])
 
     })
 
-    .controller('login', function ($scope) {
+    .controller('loginCtrl', function ($scope) {
 
     })
 

@@ -22,7 +22,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'searchResCtrl'
         })
         .state('checkOrder', {
-            url: '/orderDetails',
+            url: '/checkOrder',
             template: require('../templates/checkOrder.html'),
             controller: 'checkOrderCtrl'
         })
@@ -75,16 +75,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/login',
             template: require('../templates/login.html'),
             controller: 'loginCtrl'
-        })
-        .state('addPassenger', {
-            url: '/addPassenger',
-            template: require('../templates/addPassenger.html'),
-            controller: 'addPassengerCtrl'
-        })
-        .state('editPassenger', {
-            url: '/editPassenger',
-            template: require('../templates/editPassenger.html'),
-            controller: 'editPassengerCtrl'
         })
 
 });

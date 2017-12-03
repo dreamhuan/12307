@@ -5,6 +5,7 @@ import router from './js/router';
 import controller from './js/controller';
 import service from './js/service';
 import ngSanitize from 'angular-sanitize';
+import 'font-awesome-webpack';
 
 const app = angular.module('app',
     [
@@ -33,3 +34,4 @@ import 'sweetalert2/dist/sweetalert2.css'
 import './styles/style.less';
 import './fonts/iconfont.css';
 import './styles/orderDetails.css';
+

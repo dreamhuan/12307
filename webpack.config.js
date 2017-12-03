@@ -42,6 +42,7 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         }),
+
         //自动启动浏览器
         new OpenBrowserPlugin({url: 'http://localhost:8080'})
     ],
@@ -72,17 +73,7 @@ module.exports = {
             },
             {
                 test: /\.(png)|(jpg)|(gif)|(woff)|(svg)|(eot)|(ttf)$/,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            limit: 50000,   //小于50K的 都打包
-                            name: "[hash:8].[name].[ext]",
-                            publicPath: "img/",  //替换CSS引用的图片路径 可以替换成爱拍云上的路径
-                            outputPath: "../img/"        //生成之后存放的路径
-                        }
-                    }
-                ]
+                loader: 'url-loader?limit=1000000'
             },
             {
                 test: /\.js?$/,

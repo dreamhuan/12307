@@ -16,6 +16,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             template: require('../templates/orderDetails.html'),
             controller: 'orderDetailsCtrl'
         })
+        .state('addPassenger', {
+            url: '/addPassenger',
+            template: require('../templates/addPassenger.html'),
+            controller: 'addPassengerCtrl'
+        })
+        .state('editPassenger', {
+            url: '/editPassenger',
+            template: require('../templates/editPassenger.html'),
+            controller: 'editPassengerCtrl'
+        })
 
 });
 

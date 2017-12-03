@@ -34,4 +34,5 @@ import 'sweetalert2/dist/sweetalert2.css'
 import './styles/style.less';
 import './fonts/iconfont.css';
 import './styles/orderDetails.css';
-
+import './styles/addPassenger.less';
+import './styles/editPassenger.less';

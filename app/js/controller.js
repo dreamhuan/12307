@@ -8,5 +8,11 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('orderDetailsCtrl', function ($scope) {
+    })
+
+    .controller('addPassengerCtrl', function ($scope) {
+    })
+
+    .controller('editPassengerCtrl', function ($scope) {
     });
 export default app.name;

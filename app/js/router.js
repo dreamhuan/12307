@@ -18,4 +18,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 });
+
 export default app.name;

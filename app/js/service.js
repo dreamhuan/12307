@@ -11,6 +11,7 @@ const app = angular.module('app.service', [])
             if (!localStorage.user) {
                 userCache = null;
             }
+
             else {
                 userCache = JSON.parse(localStorage.user);
             }

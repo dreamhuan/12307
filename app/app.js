@@ -4,6 +4,7 @@ import routing from './app.config';
 import router from './js/router';
 import controller from './js/controller';
 import service from './js/service';
+import directive from './js/directive';
 import ngSanitize from 'angular-sanitize';
 import 'font-awesome-webpack';
 
@@ -12,6 +13,7 @@ const app = angular.module('app',
         router,
         controller,
         service,
+        directive,
         ngSanitize
     ])
     .config(routing)

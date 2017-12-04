@@ -1,3 +1,206 @@
-.searchRes{
+.searchRes {
+    .row {
+        margin: 0px;
+    }
+    //________________________________________禁止bootstrap row的负margin______________
+    .flex {
+        display: flex;
+    }
 
+    .flex-grow {
+        flex-basis: 0px;
+        flex-grow: 1;
+    }
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .flex-rightend {
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+    }
+    //________________________________________flex设置______________
+    .fixed_box {
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+        width: 100%;
+        .head_line {
+            height: 45px;
+            .back {
+                height: inherit;
+                display: flex;
+                background: #298ccf;
+                color: #FFFFFF;
+                .iconfont {
+                    font-size: 27px;
+                }
+            }
+            .title {
+                height: inherit;
+                color: white;
+                background: #298ccf;
+
+                font-size: 26px;
+
+            }
+            .menu {
+                height: inherit;
+                color: white;
+                font-size: 1.5em;
+                background: #298ccf;
+
+            }
+        }
+        .date_selection {
+            height: 38px;
+            div {
+                height: inherit;
+                padding: 0px;
+            }
+            .previous_day_btn {
+                color: #ffffff;
+                background: #6bb2e1;
+            }
+            .current_day {
+                background: #53a7de;
+                font-weight: bold;
+                font-size: 17px;
+                line-height: 1px;
+                color: white;
+            }
+            .next_day_btn {
+                color: #ffffff;
+                background: #6bb2e1;
+            }
+
+        }
+    }
+    .fixed_box_substitution{
+        height: 83px;
+    }
+    .train_detail {
+        .train_information {
+            .train_name {
+                font-size: 20px;
+            }
+            .start_station {
+                .icon {
+                    margin: 4px;
+                    border-radius: 5px;
+                    padding: 1px;
+                    color: white;
+                    background: #3597d4;
+                }
+                .station_name {
+                    margin-top: 2px;
+                }
+                .start_time {
+                    color: #3597d4;
+                }
+            }
+            .cost_time {
+                padding-left: 0px;
+                .fa-id-card-o {
+                    color: #3597d4;
+                    margin-top: 10px;
+                    margin-bottom: -10px;
+                }
+                .content {
+                    margin-top: 3px;
+                }
+                .fa-angle-right {
+                    margin-left: -5px;
+
+                }
+                .time {
+                    color: #b4b4b4;
+                    margin-top: -16px;
+                }
+
+            }
+            .terminal_station {
+                padding: 0px;
+                .icon {
+                    margin: 4px;
+                    border-radius: 5px;
+                    padding: 1px;
+                    color: white;
+                    background: #33a235;
+                }
+                .station_name {
+                    margin-top: 2px;
+                }
+                .start_time {
+                    color: #3597d4;
+                }
+            }
+            .more_information {
+                padding-top: 10px;
+                color: #50a5d8;
+            }
+        }
+        .seat_detail {
+            div {
+                padding: 0px;
+            }
+        }
+        border-bottom: #f0eff1 solid thin;
+    }
+    .bottom_menu {
+        width: 100%;
+        height: 55px;
+        position: fixed;
+        bottom: 0px;
+        background: #333333;
+        color: white;
+
+        .sort_by_start_time {
+            color: #327bb0;
+            font-size: 22px;
+            .fa-angle-up {
+                margin-left: 5px;
+            }
+        }
+        .sort_by_cost_time {
+            font-size: 22px;
+            .fa-angle-up {
+                margin-left: 5px;
+            }
+        }
+        .sort_by_terminal_time {
+            font-size: 22px;
+            .fa-angle-up {
+                margin-left: 5px;
+            }
+        }
+        .sort_by_remaining_tickets_or_price {
+            .relative_container {
+                width: 100%;
+                .rotation_divider {
+                    position: absolute;
+                    -webkit-transform: rotate(-45deg);
+                    top: 13px;
+                    right: 27px;
+                }
+                .sort_by_price {
+                    font-size: 22px;
+                    margin-top: 4px;
+                }
+                .sort_by_remaining_ticket {
+                    font-size: 22px;
+                    display: flex;
+                    margin-top: -10px;
+                    margin-right: 10px;
+                    color: #327bb0;
+
+                }
+            }
+        }
+    }
 }

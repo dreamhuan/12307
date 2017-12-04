@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 const app = angular.module('app.directive', [])
-    .directive('bottom', function () {
+    .directive('appBottom', function () {
         return {
             restrict: 'E',
             template: `

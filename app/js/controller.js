@@ -28,7 +28,10 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('newPassengerCtrl', function ($scope) {
-
+        $scope.name;
+        $('file-type').click(function () {
+            $('choose-list').css('top','0px');
+        })
     })
 
     .controller('checkPayCtrl', function ($scope) {

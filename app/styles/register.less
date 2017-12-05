@@ -1,3 +1,84 @@
 .register{
-
+    background-color: #298ccf;
+    .flexcenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title {
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        font-size: 22px;
+        background-color: #298ccf;
+        color: #ffffff;
+        z-index: 1000;
+        .complete {
+          padding: 0! important;
+        }
+    }
+  .main-board {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background-color: #efeff4;
+    .message {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding-left: 10px;
+      background-color: #efeff4;
+      font-size: 20px;
+    }
+    .message-container {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: white;
+      .message-title {
+        display: flex;
+        align-items: center;
+        color: gray;
+        padding: 0 !important;
+        font-size: 18px;
+      }
+      .message-container-row {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        height: 50px;
+      }
+    }
+    input {
+      border:none;
+      height: 47px;
+      display: flex;
+      align-items: center;
+      padding: 0 !important;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .serve {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .yes {
+        padding-left: 5px;
+      }
+      .item {
+        color: #298ccf;
+        padding-left: 5px;
+      }
+    }
+    .next {
+      height: 47px;
+      background-color: #298ccf;
+      color: white;
+      font-size: 20px;
+      border-radius: 5px;
+      margin: 0 5px 0 5px;
+    }
+  }
 }

@@ -1,3 +1,241 @@
-.searchMsg{
+.searchMsg {
+  background-color: #fff;
+  .title {
+    height: 50px;
+    font-size: 22px;
+    padding-top: 10px;
+    background-color: #4f8dd3;
+    color: #ffffff;
+    text-align: center;
+  }
+  .service {
+    background-color: #fff;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #f4f4f5;
+    .icon_item {
+      .late {
+        background-color: #5188cc;
+      }
+      .warm_service {
+        background-color: limegreen;
+      }
+      .order_dinner {
+        background-color: chocolate;
+      }
+      .book_car {
+        background-color: indianred;
+      }
+      .icon {
+        width: 38px;
+        height: 38px;
+        margin: auto;
+        border-radius: 50%;
+      }
+      .icon_text {
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+  .train_msg {
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f4f4f5;
 
+    .start_station_and_time {
+      padding-top: 10px;
+      margin-left: 50px;
+      .start_station {
+        font-size: 26px;
+        font-weight: bolder;
+      }
+      .start_time {
+        color: #5c84b6;
+      }
+    }
+
+    .train_num {
+      .num {
+        font-size: 20px;
+        color: #5c84b6;
+        font-weight: bolder;
+        margin-left: 45px;
+        margin-bottom: -8px;
+      }
+      .icon-wangfandijia {
+        color: #4f8dd3;
+        font-size: 33px;
+      }
+    }
+
+    .end_station_and_time {
+      padding-top: 10px;
+      margin-right: 50px;
+      .end_station {
+        font-size: 26px;
+        font-weight: bolder;
+      }
+      .end_time {
+        color: #5c84b6;
+      }
+    }
+
+
+  }
+  .inform{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f4f4f5;
+    .text{
+      padding:15px 15px 15px 15px;
+      .date_text{
+        text-align: center;
+        margin-bottom: 0px;
+        font-size: 18px;
+        font-weight: normal;
+        color: #bebebe;
+      }
+    }
+    .data{
+      padding:10px 15px 10px 15px;
+      .date{
+        text-align:center;
+        margin-bottom: 0px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .ch{
+      width:120px;
+      font-size: 18px;
+      font-weight: bold;
+      vertical-align: middle;
+      .check{
+        width:18px;
+        height:18px;
+        margin-top: 15px;
+      }
+    }
+  }
+  .select{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #f4f4f5;
+    .select_item{
+      float: left;
+      width: 25%;
+      text-align: center;
+      line-height:40px;
+    }
+    .blue_border {
+      height:40px;
+      border-radius: 5px;
+      background-color: #5188cc;
+      color: white;
+    }
+  }
+  .passenger{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    padding-bottom: 3px;
+    .passenger_item{
+      padding:10px 15px 10px 15px;
+      text-align: center;
+      margin-bottom: 0px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #5c84b6;
+    }
+    .passenger_button{
+      padding:10px 15px 10px 15px;
+      text-align: center;
+      margin-bottom: 0px;
+      font-size: 16px;
+      font-weight: normal;
+      color: #b56f3f;
+    }
+  }
+  .query{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    padding-bottom: 3px;
+    .query_button{
+      float: left;
+      width: 100%;
+      text-align: center;
+      line-height:40px;
+      height:40px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #5188cc;
+      color: white;
+    }
+  }
+  .road{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    padding-bottom: 3px;
+    flex-wrap: wrap;
+    .road_item{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width:390px;
+      text-align: left;
+      font-size:14px;
+      border-bottom: 1px solid #f4f4f5;
+    }
+    .border_top{
+      border-top: 1px solid #f4f4f5;
+    }
+  }
+  .hrLine{
+    border-top:2px solid #5188cc;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align:middle;
+    display:inline-block;
+  }
+  .hr_text{
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #bebebe;
+  }
 }

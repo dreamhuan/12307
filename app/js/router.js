@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 
 const app = angular.module('app.router', [uiRouter]);
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/test');
+    $urlRouterProvider.otherwise('/searchMsg');
 
     $stateProvider
         .state('test', {

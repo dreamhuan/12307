@@ -1,19 +1,19 @@
 <div class="passengerList">
     <div class="addPassenger container-fluid">
         <div class="title flexcenter container-fluid">
-            <div class="col-xs-2"><i class="iconfont icon-fanhui"></i></div>
+            <div class="col-xs-2" ng-click="back()"><i class="iconfont icon-fanhui"></i></div>
             <div class="col-xs-8 flexcenter">添加乘客</div>
-            <div class="col-xs-2 flexcenter complete">完成</div>
+            <div class="col-xs-2 flexcenter complete" ng-click="finish()">完成</div>
         </div>
         <div class="container-fluid main-board">
             <div class="row2 flexcenter">
                 <div class="col-xs-10">
                     <div class="col-xs-12 row2-row1 flexcenter">
                         <i class="fa fa-search"></i>
-                        <input type="text" value="搜索" class="col-xs-11"></input>
+                        <input type="text" value="搜索" class="col-xs-11"/>
                     </div>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2" ng-click="newPassenger()">
                     <i class="fa fa-plus-circle row2-col2 flexcenter"></i>
                 </div>
             </div>

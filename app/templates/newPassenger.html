@@ -1,9 +1,9 @@
 <div class="newPassenger">
     <div class="editPassenger container-fluid">
         <div class="title flexcenter container-fluid">
-            <div class="col-xs-2"><i class="iconfont icon-fanhui"></i></div>
+            <div class="col-xs-2" ng-click="back()"><i class="iconfont icon-fanhui"></i></div>
             <div class="col-xs-8 flexcenter">编辑联系人</div>
-            <div class="col-xs-2 flexcenter complete">完成</div>
+            <div class="col-xs-2 flexcenter complete" ng-click="finish()">完成</div>
         </div>
         <div class="container-fluid main-board">
             <div class="message">基本信息</div>
@@ -67,27 +67,27 @@
                 <div class="col-xs-12">互联网售票实行实名制，请准确填写乘车人信息</div>
             </div>
         </div>
-        <div class="choose-list col-xs-12">
-            <div class="choose-list-title col-xs-12">
-                <div class="choose-list-title-cancel">取消</div>
-                <div class="choose-list-title-sure">确定</div>
-            </div>
-        </div>
-        <div class="choose-container col-xs-12">
-            <div class="col-xs-12 choose-item flexcenter" style="color: black">二代身份证</div>
-            <div class="col-xs-12 choose-item flexcenter">港澳居民来往内地通行证</div>
-            <div class="col-xs-12 choose-item flexcenter">台湾居民来往大陆通行证</div>
-            <div class="col-xs-12 choose-item flexcenter">护照</div>
-        </div>
-        <div class="choose-container2 col-xs-12">
-            <div class="col-xs-12 choose-item flexcenter" style="color: black">成人</div>
-            <div class="col-xs-12 choose-item flexcenter">儿童</div>
-            <div class="col-xs-12 choose-item flexcenter">学生</div>
-            <div class="col-xs-12 choose-item flexcenter">残军</div>
-        </div>
-        <div class="choose col-xs-12 flexcenter">
-            <div class="col-xs-12 choose-box"></div>
-        </div>
+        <!--<div class="choose-list col-xs-12">-->
+            <!--<div class="choose-list-title col-xs-12">-->
+                <!--<div class="choose-list-title-cancel">取消</div>-->
+                <!--<div class="choose-list-title-sure">确定</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="choose-container col-xs-12">-->
+            <!--<div class="col-xs-12 choose-item flexcenter" style="color: black">二代身份证</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">港澳居民来往内地通行证</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">台湾居民来往大陆通行证</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">护照</div>-->
+        <!--</div>-->
+        <!--<div class="choose-container2 col-xs-12">-->
+            <!--<div class="col-xs-12 choose-item flexcenter" style="color: black">成人</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">儿童</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">学生</div>-->
+            <!--<div class="col-xs-12 choose-item flexcenter">残军</div>-->
+        <!--</div>-->
+        <!--<div class="choose col-xs-12 flexcenter">-->
+            <!--<div class="col-xs-12 choose-box"></div>-->
+        <!--</div>-->
         <app-bottom></app-bottom>
     </div>
 </div>

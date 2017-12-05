@@ -2,7 +2,7 @@
     <div class="title">
         <div class="order">订单</div>
         <div class="pay_please">请您支付</div>
-        <div class="complete">完成</div>
+        <div class="complete" ng-click="finish()">完成</div>
     </div>
     <div>
         <img src="../img/和谐.jpg"  class="train_img">
@@ -25,7 +25,7 @@
             <table style="width: 100%;">
                 <tr style="width: 100%;">
                     <td class="select_item" align="left" style="width: 50%;">
-                        <input type="radio" class="ridio"><label class="select_text">工商银行</label>
+                        <input type="radio" class="ridio" checked><label class="select_text">工商银行</label>
                     </td>
                     <td class="select_item" align="left" style="width: 50%;">
                         <input type="radio" class="ridio"><label class="select_text">农业银行</label>
@@ -67,6 +67,6 @@
         </form>
     </div>
     <div class="pay">
-        <div class="pay_button">提交支付</div>
+        <div class="pay_button" ng-click="submit()">提交支付</div>
     </div>
 </div>

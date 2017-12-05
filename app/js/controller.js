@@ -9,60 +9,116 @@ const app = angular.module('app.controller', [])
         console.log($.fn);
     })
 
-    .controller('searchMsgCtrl', function ($scope) {
-
+    .controller('searchMsgCtrl', function ($scope, $state) {
+        $scope.search = function () {
+            $state.go('searchRes');
+        };
     })
 
-    .controller('searchResCtrl', function ($scope) {
+    .controller('searchResCtrl', function ($scope, $state) {
         $scope.records = [
-            1,2,3,4,5,6,7,8,9,89,10,11,12
-        ]
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 89, 10, 11, 12
+        ];
+        $scope.determine = function () {
+            $state.go('checkOrder');
+        };
+        $scope.back = function () {
+            window.location.replace('http://localhost:8080/#!/searchMsg');
+            // history.go(-1);
+        };
     })
 
-    .controller('checkOrderCtrl', function ($scope) {
+    .controller('checkOrderCtrl', function ($scope, $state) {
+        $scope.add = function () {
+            $state.go('passengerList');
+        };
+        $scope.back = function () {
+            window.location.replace('http://localhost:8080/#!/searchRes')
+            // history.go(-1);
+        };
+        $scope.submit = function () {
+            $state.go('checkPay');
+        };
+    })
+
+    .controller('passengerListCtrl', function ($scope, $state) {
+        $scope.newPassenger = function () {
+            $state.go('newPassenger');
+        };
+        $scope.finish = function () {
+            window.location.replace('http://localhost:8080/#!/checkOrder')
+            // history.go(-1);
+        };
+        $scope.back = function () {
+            window.location.replace('http://localhost:8080/#!/checkOrder')
+            // history.go(-1);
+        };
+    })
+
+    .controller('newPassengerCtrl', function ($scope, $state) {
+        // $('file-type').click(function () {
+        //     $('choose-list').css('top', '0px');
+        // })
+        $scope.finish = function () {
+            window.location.replace('http://localhost:8080/#!/passengerList')
+            // history.go(-1);
+        };
+        $scope.back = function () {
+            window.location.replace('http://localhost:8080/#!/passengerList')
+            // history.go(-1);
+        };
+    })
+
+    .controller('checkPayCtrl', function ($scope, $state) {
+        $scope.pay = function () {
+            $state.go('payChoice');
+        };
+    })
+
+    .controller('payChoiceCtrl', function ($scope, $state) {
+        $scope.finish = function () {
+            $state.go('orderDetail');
+        };
+        $scope.submit = function () {
+            $state.go('orderDetail');
+        };
+    })
+
+    .controller('orderDetailCtrl', function ($scope, $state) {
+        $scope.back = function () {
+            window.location.replace('http://localhost:8080/#!/payChoice')
+            // history.go(-1);
+        };
+        $scope.refund = function () {
+            $state.go('checkRefund');
+        };
+    })
+
+    .controller('checkRefundCtrl', function ($scope, $state) {
+        $scope.confirm = function () {
+            $state.go('refundSuccess');
+        };
+        $scope.cancel = function () {
+            window.location.replace('http://localhost:8080/#!/orderDetail')
+            // history.go(-1);
+        };
+    })
+
+    .controller('refundSuccessCtrl', function ($scope, $state) {
+        $scope.continue = function () {
+            $state.go('searchMsg');
+        };
+    })
+
+    .controller('registerCtrl', function ($scope, $state) {
 
     })
 
-    .controller('passengerListCtrl', function ($scope) {
+    .controller('checkRegCtrl', function ($scope, $state) {
 
     })
 
-    .controller('newPassengerCtrl', function ($scope) {
-        $scope.name;
-        $('file-type').click(function () {
-            $('choose-list').css('top','0px');
-        })
-    })
-
-    .controller('checkPayCtrl', function ($scope) {
-
-    })
-
-    .controller('payChoiceCtrl', function ($scope) {
-
-    })
-
-    .controller('orderDetailCtrl', function ($scope) {
-
-    })
-
-    .controller('checkRefundCtrl', function ($scope) {
-
-    })
-
-    .controller('refundSuccessCtrl', function ($scope) {
-
-    })
-
-    .controller('registerCtrl', function ($scope) {
-
-    })
-
-    .controller('checkRegCtrl', function ($scope) {
-
-    })
-
-    .controller('loginCtrl', function ($scope) {
+    .controller('loginCtrl', function ($scope, $state) {
 
     })
 

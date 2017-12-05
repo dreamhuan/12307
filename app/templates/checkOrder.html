@@ -1,6 +1,6 @@
 <div class="checkOrder">
     <div class="title">
-        <i class="iconfont icon-fanhui"></i>
+        <i class="iconfont icon-fanhui"  ng-click="back()"></i>
         <div class="content">确认订单</div>
     </div>
     <div class="choose_time">
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="passenger">
-        <div class="add">
+        <div class="add" ng-click="add()">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             添加乘客
         </div>
@@ -54,6 +54,6 @@
         <div>选座服务</div>
         <div><i class="fa fa-angle-right" aria-hidden="true"></i></div>
     </div>
-    <div class="submit">提交订单</div>
+    <div class="submit" ng-click="submit()">提交订单</div>
     <app-bottom></app-bottom>
 </div>

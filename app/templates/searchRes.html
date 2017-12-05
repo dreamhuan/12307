@@ -2,7 +2,7 @@
     <div class="fixed_box">
         <div class="head_line row">
             <div class="back col-xs-2 flex-center">
-                <i class="fa fa-angle-left fa-2x"></i>
+                <i class="fa fa-angle-left fa-2x" ng-click="back()"></i>
             </div>
             <div class="col-xs-8 flex-center title">杭州<>上海</div>
             <div class="col-xs-2 flex-center menu fa fa-bars"></div>
@@ -15,7 +15,7 @@
     </div>
     <div class="fixed_box_substitution"></div>
     <div class="scroll_box">
-        <div class="train_detail row" ng-repeat="i in records">
+        <div class="train_detail row" ng-repeat="i in records" ng-click="determine()">
             <div class="row train_information">
                 <div class="train_name col-xs-2">G1344</div>
                 <div class="start_station col-xs-3">

@@ -1,12 +1,12 @@
 <div class="orderDetail">
     <div class="head">
-        <div><i class="iconfont icon-fanhui"></i></div>
+        <div ng-click="back()"><i class="iconfont icon-fanhui"></i></div>
         <div class="order_details">订单详情</div>
         <div><i class="iconfont icon-cf-c57"></i></div>
     </div>
 
     <div class="choices">
-        <div class="return_ticket">退票</div>
+        <div class="return_ticket" ng-click="refund()">退票</div>
         <div class="change_ticket">改签</div>
         <div class="change_station">变更到站</div>
         <div class="passenger_accident_insurance">乘意险</div>

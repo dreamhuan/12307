@@ -1,58 +1,54 @@
 <div class="checkRefund">
-    <div class="head">
-        <div><i class="iconfont icon-fanhui"></i></div>
-        <div class="order_details">订单详情</div>
-        <div><i class="iconfont icon-cf-c57"></i></div>
-    </div>
+    <div class="title">确认退票</div>
 
-    <div class="choices">
-        <div class="return_ticket">退票</div>
-        <div class="change_ticket">改签</div>
-        <div class="change_station">变更到站</div>
-        <div class="passenger_accident_insurance">乘意险</div>
-        <div class="order_meal">订餐</div>
-    </div>
-
-    <div class="return_ticket_underline"></div>
-
-    <div class="order_num_and_date">
-        <div class="order_num">E072021851</div>
-        <div class="order_date">2017年11月7日</div>
-    </div>
-
-    <div class="ticket_details">
-        <div class="time_and_station">
-            <div class="ticket_date">2017-11-10</div>
-            <div class="ticket_time">16:50开</div>
+    <div class="train_msg">
+        <div class="start_station_and_time">
             <div class="start_station">杭州东</div>
-            <div><i class="iconfont icon-changjiantou"></i></div>
+            <div class="start_time">16:50 出发</div>
+        </div>
+        <div class="train_num">
+            <div class="num">G7545</div>
+            <div><i class="iconfont icon-straight"></i></div>
+        </div>
+        <div class="end_station_and_time">
             <div class="end_station">余姚北</div>
+            <div class="end_time">17:29 到达</div>
         </div>
+    </div>
 
-        <div class="seat_msg">
-            <div class="train_num">G7545</div>
-            <div class="seat_level">二等座</div>
-            <div class="carriage_num">04车</div>
-            <div class="seat_num">09A号</div>
+    <div class="passenger_msg">
+        <div class="passenger_identity">
+            <div class="name">岑焕亚</div>
+            <div class="identity_num">330***********500X</div>
+            <div class="identity_type">二代身份证</div>
         </div>
-
-        <div class="passenger_msg">
-            <div class="passenger_name">岑焕亚</div>
-            <div class="passenger_identity">二代身份证</div>
+        <div class="passenger_ticket_msg">
             <div class="ticket_type">成人票</div>
+            <div class="seat_level">二等座</div>
+            <div class="carriage_num">04</div>
+            <div class="carriage">车</div>
+            <div class="seat_num">09A号</div>
             <div class="ticket_price">48.50元</div>
         </div>
-
-        <div class="ticket_state_and_refund_btn">
-            <div class="ticket_state">车票状态:已支付</div>
-            <button class="refund_btn">退票</button>
-        </div>
     </div>
 
-    <div class="bottom">
-        <div class="ticket_booking">车票预定</div>
-        <div class="business_travel_service">商旅服务</div>
-        <div class="query_order">订单查询</div>
-        <div class="my_12307">我的12307</div>
+    <div class="return_money">
+        <div class="text">应退票款：</div>
+        <div class="money">46.00元</div>
     </div>
+
+    <div class="return_rate">
+        <div class="current_rate_text">当前退票费率：</div>
+        <div class="current_rate">5%</div>
+        <div class="current_price_text">退票费：</div>
+        <div class="current_price">2.50元</div>
+    </div>
+
+    <button class="confirm_btn">确认退票</button>
+
+    <button class="cancel_btn">取消退票</button>
+
+    <div class="tips"><img src="../img/refund_ticket_tips.jpg"></div>
+
+    <app-bottom></app-bottom>
 </div>

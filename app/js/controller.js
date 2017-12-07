@@ -13,6 +13,10 @@ const app = angular.module('app.controller', [])
         $scope.search = function () {
             $state.go('searchRes');
         };
+        $scope.addPassenger = function () {
+            $state.go('passengerList');
+            localStorage.passengerList = 'searchMsg';
+        };
     })
 
     .controller('searchResCtrl', function ($scope, $state) {
@@ -31,6 +35,7 @@ const app = angular.module('app.controller', [])
     .controller('checkOrderCtrl', function ($scope, $state) {
         $scope.add = function () {
             $state.go('passengerList');
+            localStorage.passengerList = 'checkOrder';
         };
         $scope.back = function () {
             window.location.replace('http://localhost:8080/#!/searchRes')
@@ -46,7 +51,7 @@ const app = angular.module('app.controller', [])
             $state.go('newPassenger');
         };
         $scope.finish = function () {
-            window.location.replace('http://localhost:8080/#!/checkOrder')
+            window.location.replace('http://localhost:8080/#!/' + localStorage.passengerList);
             // history.go(-1);
         };
         $scope.back = function () {

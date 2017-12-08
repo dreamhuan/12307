@@ -301,7 +301,26 @@ const app = angular.module('app.controller', [])
 
     .controller('checkRefundCtrl', function ($scope, $state) {
         $scope.confirm = function () {
-            $state.go('refundSuccess');
+
+            swal({
+                title: '温馨提示',
+                text: '退票后不能撤销操作，请确认！',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            }).then(function(isConfirm) {
+                if (isConfirm === true) {
+                    $state.go('refundSuccess');
+
+                } else if (isConfirm === false) {
+                    $state.go('checkRefund');
+
+                } else {
+                    // Esc, close button or outside click
+                    // isConfirm is undefined
+                }
+            });
         };
         $scope.cancel = function () {
             window.location.replace('http://localhost:8080/#!/orderDetail')

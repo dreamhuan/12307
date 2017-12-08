@@ -4,7 +4,6 @@
     width: 100%;
     height: 736px;
 
-
     .head {
         display: flex;
         justify-content: space-between;
@@ -36,6 +35,48 @@
         padding-top: 5px;
     }
 
+    .hide {
+        display: none;;
+    }
+
+    .choices_border {
+        display: flex;
+
+        .choice1_border {
+            height: 2px;
+            width: 18%;
+            background-color: #5a91ce;
+        }
+
+        .choice2_border {
+            height: 2px;
+            width: 18%;
+            margin-left: 18%;
+            background-color: #5a91ce;
+        }
+
+        .choice3_border {
+            height: 2px;
+            width: 24%;
+            margin-left: 36%;
+            background-color: #5a91ce;
+        }
+
+        .choice4_border {
+            height: 2px;
+            width: 18%;
+            margin-left: 63%;
+            background-color: #5a91ce;
+        }
+
+        .choice5_border {
+            height: 2px;
+            width: 18%;
+            margin-left: 82%;
+            background-color: #5a91ce;
+        }
+    }
+
     .order_num_and_date {
         display: flex;
         justify-content: space-between;
@@ -61,7 +102,7 @@
         border: 1px solid #d9dae3;
         font-size: 16px;
 
-        .time_and_station, .seat_msg, .passenger_msg, .ticket_state {
+        .time_and_station, .seat_msg, .passenger_msg, .ticket_state_and_other {
             width: 90%;
             margin: auto;
             display: flex;
@@ -72,32 +113,104 @@
             margin-left: 10px;
         }
 
-        .icon-changjiantou{
+        .icon-changjiantou {
             margin-left: 15px;
         }
 
-        .seat_level,.passenger_identity{
+        .seat_level, .passenger_identity {
             margin-left: 40px;
         }
 
-        .carriage_num{
+        .carriage_num {
             margin-left: 50px;
             color: #ebaa20;
         }
 
-        .seat_num{
+        .seat_num {
             margin-left: 20px;
             color: #ebaa20;
         }
 
-        .ticket_type{
+        .ticket_type {
             margin-left: 15px;
         }
 
-        .ticket_price{
+        .ticket_price {
             margin-left: 40px;
             color: #c12a2c;
         }
+
+        .refund_ticket_btn {
+            background-color: #4f8dd3;
+            color: #FFFFFF;
+            margin-left: 150px;
+            width: 65px;
+            height: 25px;
+            margin-top: -5px;
+        }
+
+        .refund_ticket_btn, .refund_ticket_btn:hover, .refund_ticket_btn:active, .refund_ticket_btn:focus {
+            outline: none;
+            border: none;
+        }
+
+        .order_meal_btn {
+            background-color: #4f8dd3;
+            color: #FFFFFF;
+            margin-left: 145px;
+            width: 75px;
+            height: 25px;
+            margin-top: -5px;
+            font-size: 14px;
+        }
+
+        .order_meal_btn, .order_meal_btn:hover, .order_meal_btn:active, .order_meal_btn:focus {
+            outline: none;
+            border: none;
+        }
+
+        .change_ticket_select {
+            width: 18px;
+            height: 18px;
+            background-color: #e7e8eb;
+            border: 1px solid #acafb4;
+            border-radius: 5px;
+            margin-left: 180px;
+        }
+    }
+
+    .change_ticket_btn {
+        width: 97%;
+        margin: auto;
+        height: 45px;
+        margin-top: 40px;
+        background-color: #4f8dd3;
+        color: #ffffff;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+    }
+
+    .change_ticket_btn, .change_ticket_btn:hover, .change_ticket_btn:active, .change_ticket_btn:focus {
+        outline: none;
+        border: none;
+    }
+
+    .change_station_btn {
+        width: 97%;
+        margin: auto;
+        height: 45px;
+        margin-top: 40px;
+        background-color: #4f8dd3;
+        color: #ffffff;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+    }
+
+    .change_station_btn, .change_station_btn:hover, .change_station_btn:active, .change_station_btn:focus {
+        outline: none;
+        border: none;
     }
 
 }

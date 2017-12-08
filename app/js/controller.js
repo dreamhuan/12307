@@ -218,9 +218,85 @@ const app = angular.module('app.controller', [])
             window.location.replace('http://localhost:8080/#!/payChoice')
             // history.go(-1);
         };
-        $scope.refund = function () {
-            $state.go('checkRefund');
+
+        $scope.showRefund = function () {
+            $('.choice1_border').removeClass('hide');
+            $('.refund_ticket_btn').removeClass('hide');
+
+            $('.choice2_border').addClass('hide');
+            $('.choice3_border').addClass('hide');
+            $('.choice4_border').addClass('hide');
+            $('.choice5_border').addClass('hide');
+            $('.order_meal_btn').addClass('hide');
+            $('.change_ticket_select').addClass('hide');
+            $('.change_ticket_btn').addClass('hide');
+            $('.change_station_btn').addClass('hide');
         };
+
+        $scope.refund = function () {
+            swal({
+                title: '温馨提示',
+                text: '如有订餐，请按规定自行办理退餐。',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            }).then(function(isConfirm) {
+                if (isConfirm === true) {
+                    $state.go('checkRefund');
+
+                } else if (isConfirm === false) {
+                    $state.go('orderDetail');
+
+                } else {
+                    // Esc, close button or outside click
+                    // isConfirm is undefined
+                }
+            });
+        };
+
+        $scope.showChangeTicket = function () {
+            $('.choice2_border').removeClass('hide');
+            $('.change_ticket_select').removeClass('hide');
+            $('.change_ticket_btn').removeClass('hide');
+
+            $('.choice1_border').addClass('hide');
+            $('.choice3_border').addClass('hide');
+            $('.choice4_border').addClass('hide');
+            $('.choice5_border').addClass('hide');
+            $('.order_meal_btn').addClass('hide');
+            $('.refund_ticket_btn').addClass('hide');
+            $('.change_station_btn').addClass('hide');
+        };
+
+        $scope.showChangeStation = function () {
+            $('.choice3_border').removeClass('hide');
+            $('.change_station_btn').removeClass('hide');
+            $('.change_ticket_select').removeClass('hide');
+
+            $('.choice1_border').addClass('hide');
+            $('.choice2_border').addClass('hide');
+            $('.choice4_border').addClass('hide');
+            $('.choice5_border').addClass('hide');
+            $('.order_meal_btn').addClass('hide');
+            $('.refund_ticket_btn').addClass('hide');
+            $('.change_ticket_btn').addClass('hide');
+        };
+
+        $scope.showOrderMeal = function () {
+            $('.choice5_border').removeClass('hide');
+            $('.order_meal_btn').removeClass('hide');
+
+            $('.choice1_border').addClass('hide');
+            $('.choice2_border').addClass('hide');
+            $('.choice3_border').addClass('hide');
+            $('.choice4_border').addClass('hide');
+            $('.refund_ticket_btn').addClass('hide');
+            $('.change_ticket_select').addClass('hide');
+            $('.change_ticket_btn').addClass('hide');
+            $('.change_station_btn').addClass('hide');
+        };
+
     })
 
     .controller('checkRefundCtrl', function ($scope, $state) {

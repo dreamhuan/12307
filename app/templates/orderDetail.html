@@ -6,12 +6,21 @@
     </div>
 
     <div class="choices">
-        <div class="return_ticket" ng-click="refund()">退票</div>
-        <div class="change_ticket">改签</div>
-        <div class="change_station">变更到站</div>
+        <div class="return_ticket" ng-click="showRefund()">退票</div>
+        <div class="change_ticket" ng-click="showChangeTicket()">改签</div>
+        <div class="change_station" ng-click="showChangeStation()">变更到站</div>
         <div class="passenger_accident_insurance">乘意险</div>
-        <div class="order_meal">订餐</div>
+        <div class="order_meal" ng-click="showOrderMeal()">订餐</div>
     </div>
+
+    <div class="choices_border">
+        <div class="choice1_border hide"></div>
+        <div class="choice2_border hide"></div>
+        <div class="choice3_border hide"></div>
+        <div class="choice4_border hide"></div>
+        <div class="choice5_border hide"></div>
+    </div>
+
 
     <div class="order_num_and_date">
         <div class="order_num">E072021851</div>
@@ -20,28 +29,38 @@
 
     <div class="ticket_details">
         <div class="time_and_station">
-            <div class="ticket_date">2017-11-10</div>
-            <div class="ticket_time">16:50开</div>
+            <div class="ticket_date">2017-12-31</div>
+            <div class="ticket_time">12:00开</div>
             <div class="start_station">杭州东</div>
             <div><i class="iconfont icon-changjiantou"></i></div>
-            <div class="end_station">余姚北</div>
+            <div class="end_station">上海虹桥</div>
         </div>
 
         <div class="seat_msg">
-            <div class="train_num">G7545</div>
+            <div class="train_num">G1354</div>
             <div class="seat_level">二等座</div>
-            <div class="carriage_num">04车</div>
-            <div class="seat_num">09A号</div>
+            <div class="carriage_num">11车</div>
+            <div class="seat_num">11A号</div>
         </div>
 
         <div class="passenger_msg">
-            <div class="passenger_name">岑焕亚</div>
+            <div class="passenger_name">傅凯琪</div>
             <div class="passenger_identity">二代身份证</div>
             <div class="ticket_type">成人票</div>
             <div class="ticket_price">48.50元</div>
         </div>
 
-        <div class="ticket_state">车票状态:已支付</div>
+        <div class="ticket_state_and_other">
+            <div class="ticket_state">车票状态:已支付</div>
+            <button class="refund_ticket_btn hide" ng-click="refund()">退票</button>
+            <button class="order_meal_btn hide">订餐服务</button>
+            <div class="change_ticket_select hide"></div>
+        </div>
+
+        <button class="change_ticket_btn hide">改签</button>
+        <button class="change_station_btn hide">变更到站</button>
+
+
     </div>
     
     <div class="bottom">

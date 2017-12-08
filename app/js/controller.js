@@ -7,6 +7,7 @@ const app = angular.module('app.controller', [])
     .controller('testCtrl', function ($scope) {
         $scope.hello = 'hello world';
         console.log($.fn);
+        $('#test').click(() => $('#test').css('width', '300px'))
     })
 
     .controller('searchMsgCtrl', function ($scope, $state) {

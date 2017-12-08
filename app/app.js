@@ -50,4 +50,4 @@ import './styles/refundSuccess.less';
 import './styles/register.less';
 import './styles/checkReg.less';
 import './styles/login.less';
-
+import './styles/travelService.less';

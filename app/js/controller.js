@@ -62,9 +62,132 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('newPassengerCtrl', function ($scope, $state) {
-        // $('file-type').click(function () {
-        //     $('choose-list').css('top', '0px');
-        // })
+        var clickFileType = 0;
+        var clickPassType = 0;
+        var thisItem = 0;
+        $('.file-type').click(function () {
+            thisItem = 0;
+            $('.choose-container').css('bottom','-50px');
+            $('.choose-container').children().eq(0).css('color','black');
+            $('.choose-container').children().eq(1).css('color','#d4d4d4');
+            $('.choose-container').children().eq(2).css('color','#d4d4d4');
+            $('.choose-container').children().eq(3).css('color','#d4d4d4');
+
+            if(clickPassType%2==1){
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container2').css('height','0px');
+                $('.choose-box').css('height','0px');
+                clickPassType+=1;
+            }
+            clickFileType+=1;
+            if(clickFileType%2==1){
+                $('.choose-list').css('height', '300px');
+                $('.choose').css('height','250px');
+                $('.choose-container').css('height','200px');
+                $('.choose-box').css('height','50px');
+            }
+            else{
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container').css('height','0px');
+                $('.choose-box').css('height','0px');
+            }
+        })
+        $('.pass-type').click(function () {
+            thisItem = 0;
+            $('.choose-container2').css('bottom','-50px');
+            $('.choose-container2').children().eq(0).css('color','black');
+            $('.choose-container2').children().eq(1).css('color','#d4d4d4');
+            $('.choose-container2').children().eq(2).css('color','#d4d4d4');
+            $('.choose-container2').children().eq(3).css('color','#d4d4d4');
+
+            if(clickFileType%2==1){
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container').css('height','0px');
+                $('.choose-box').css('height','0px');
+                clickFileType+=1;
+            }
+            clickPassType+=1;
+            if(clickPassType%2==1){
+                $('.choose-list').css('height', '300px');
+                $('.choose').css('height','250px');
+                $('.choose-container2').css('height','200px');
+                $('.choose-box').css('height','50px');
+            }
+            else{
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container2').css('height','0px');
+                $('.choose-box').css('height','0px');
+            }
+        })
+        $('.choose-item').click(function(){
+           $(this).css('color','black');
+           if(clickFileType%2==1){
+               $('.choose-container').children().eq(thisItem).css('color','#d4d4d4');
+               thisItem =  $('.choose-container').children().index(this);
+               var s = -50+thisItem*50;
+               var ss=s+'px';
+               if(thisItem == 3)
+                   $('.choose-container').children().eq(0).css('color','#f7f7f7');
+               else if(thisItem!=0)
+                   $('.choose-container').children().eq(0).css('color','#d4d4d4');
+               console.log(thisItem);
+               $('.choose-container').css('bottom',ss);
+           }
+            if(clickPassType%2==1){
+                $('.choose-container2').children().eq(thisItem).css('color','#d4d4d4');
+                thisItem =  $('.choose-container2').children().index(this);
+                if(thisItem == 3)
+                    $('.choose-container2').children().eq(0).css('color','#f7f7f7');
+                else if(thisItem!=0)
+                    $('.choose-container2').children().eq(0).css('color','#d4d4d4');
+                console.log(thisItem);
+                var s = -50+thisItem*50;
+                var ss=s+'px';
+                $('.choose-container2').css('bottom',ss);
+            }
+        })
+
+        $('.choose-list-title-cancel').click(function(){
+            thisItem = 0;
+            if(clickFileType%2==1){
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container').css('height','0px');
+                $('.choose-box').css('height','0px');
+                clickFileType+=1;
+            }
+            if(clickPassType%2==1){
+                $('.choose-list').css('height', '0px');
+                $('.choose').css('height','0px');
+                $('.choose-container2').css('height','0px');
+                $('.choose-box').css('height','0px');
+                clickPassType+=1;
+            }
+            $('.choose-container').css('bottom','-50px');
+            $('.choose-container').children().eq(0).css('color','black');
+            $('.choose-container').children().eq(1).css('color','#d4d4d4');
+            $('.choose-container').children().eq(2).css('color','#d4d4d4');
+            $('.choose-container').children().eq(3).css('color','#d4d4d4');
+            $('.choose-container2').css('bottom','-50px');
+            $('.choose-container2').children().eq(0).css('color','black');
+            $('.choose-container2').children().eq(1).css('color','#d4d4d4');
+            $('.choose-container2').children().eq(2).css('color','#d4d4d4');
+            $('.choose-container2').children().eq(3).css('color','#d4d4d4');
+        })
+        $('.choose-list-title-sure').click(function() {
+            if(clickFileType%2==1){
+                var tmp = $('.choose-container').children().eq(thisItem).text();
+                $('.file-type-text').val(tmp);
+            }
+            if(clickPassType%2==1){
+                var tmp = $('.choose-container2').children().eq(thisItem).text();
+                $('.pass-type-text').val(tmp);
+            }
+        })
         $scope.finish = function () {
             window.location.replace('http://localhost:8080/#!/passengerList')
             // history.go(-1);

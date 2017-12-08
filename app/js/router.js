@@ -76,6 +76,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             template: require('../templates/login.html'),
             controller: 'loginCtrl'
         })
+        .state('travelService',{
+            url: '/travelService',
+            template: require('../templates/travelService.html'),
+            controller: 'travelServiceCtrl'
+        })
 
 });
 

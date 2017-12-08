@@ -127,5 +127,8 @@ const app = angular.module('app.controller', [])
 
     })
 
+    .controller('travelServiceCtrl', function ($scope, $state) {
+
+    })
 ;
 export default app.name;

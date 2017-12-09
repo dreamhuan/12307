@@ -1,3 +1,17 @@
 <div class="checkReg">
-    checkReg
+    <div class="title">
+        <i class="iconfont icon-fanhui" ng-click="back()"></i>
+        <div class="content">短信验证</div>
+    </div>
+    <div class="info">
+        <p style="margin-bottom: 2px"><span style="color: red">*</span>温馨提示：</p>
+        <p style="line-height:16px">
+            为了保护您的安全，便于今后为你服务，请按照一下程序进行手机双向核验：<br>
+            第一步：请用您的手机18*******84发送短信999<br>
+            至12306，以便确认您的手机可以联络。<br>
+            第二步：12306街道您的短信后将给您的手机回复刘伟数字短信，请您在十分钟内将六位数字短信填写在下方空白框中，并点击‘完成注册按钮’。现在先请您发送999短信，并稍后我们的回复。</p>
+    </div>
+    <div class="send_msg">发送注册短信</div>
+    <div class="idf_input"><input type="text" placeholder="短信验证码"></div>
+    <div class="submit" ng-click="submit()">完成注册</div>
 </div>

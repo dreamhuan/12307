@@ -46,6 +46,11 @@ const app = angular.module('app.service', [])
             return $http.post(SystemService.getHostIP() + 'user', user);
         };
     })
+    .service('StationService',function ($http,SystemService) {
+        this.getInfor = function () {
+            return $http.get(SystemService.getHostIP() + 'stationInformation');
+        };
+    })
 
 ;
 export default app.name;

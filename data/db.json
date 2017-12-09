@@ -9,21 +9,6 @@
       "id": 2,
       "name": "chy",
       "pwd": "123"
-    },
-    {
-      "name": 123,
-      "pwd": 456,
-      "id": 3
-    },
-    {
-      "name": 123,
-      "pwd": 456,
-      "id": 4
-    },
-    {
-      "name": 123,
-      "pwd": 456,
-      "id": 5
     }
   ],
   "stationInformation": [

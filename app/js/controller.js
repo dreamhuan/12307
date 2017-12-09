@@ -4,10 +4,12 @@ import $ from 'jquery';
 
 const app = angular.module('app.controller', [])
 
-    .controller('testCtrl', function ($scope) {
+    .controller('testCtrl', function ($scope, StationService) {
         $scope.hello = 'hello world';
         console.log($.fn);
         $('#test').click(() => $('#test').css('width', '300px'))
+        StationService.getInfor()
+            .then(res => console.log(res.data))
     })
 
     .controller('searchMsgCtrl', function ($scope, $state) {
@@ -379,9 +381,12 @@ const app = angular.module('app.controller', [])
             };
             UserService.register(user)
                 .then(data => console.log(data),
-                        err => console.log(err))
+                    err => console.log(err))
                 .catch(console.log.bind(console));
-        }
+        };
+        $scope.back = function () {
+            history.go(-1);
+        };
     })
 
     .controller('checkRegCtrl', function ($scope, $state) {

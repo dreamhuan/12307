@@ -77,6 +77,7 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container2').css('height','0px');
+                $('.choose-container2').hide();
                 $('.choose-box').css('height','0px');
                 clickPassType+=1;
             }
@@ -85,12 +86,14 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '300px');
                 $('.choose').css('height','250px');
                 $('.choose-container').css('height','200px');
+                $('.choose-container').show();
                 $('.choose-box').css('height','50px');
             }
             else{
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container').css('height','0px');
+                $('.choose-container').hide();
                 $('.choose-box').css('height','0px');
             }
         })
@@ -106,6 +109,7 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container').css('height','0px');
+                $('.choose-container').hide();
                 $('.choose-box').css('height','0px');
                 clickFileType+=1;
             }
@@ -113,6 +117,7 @@ const app = angular.module('app.controller', [])
             if(clickPassType%2==1){
                 $('.choose-list').css('height', '300px');
                 $('.choose').css('height','250px');
+                $('.choose-container2').show();
                 $('.choose-container2').css('height','200px');
                 $('.choose-box').css('height','50px');
             }
@@ -120,11 +125,11 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container2').css('height','0px');
+                $('.choose-container2').hide();
                 $('.choose-box').css('height','0px');
             }
         })
         $('.choose-item').click(function(){
-           $(this).css('color','black');
            if(clickFileType%2==1){
                $('.choose-container').children().eq(thisItem).css('color','#d4d4d4');
                thisItem =  $('.choose-container').children().index(this);
@@ -132,7 +137,7 @@ const app = angular.module('app.controller', [])
                var ss=s+'px';
                if(thisItem == 3)
                    $('.choose-container').children().eq(0).css('color','#f7f7f7');
-               else if(thisItem!=0)
+               else
                    $('.choose-container').children().eq(0).css('color','#d4d4d4');
                console.log(thisItem);
                $('.choose-container').css('bottom',ss);
@@ -142,13 +147,14 @@ const app = angular.module('app.controller', [])
                 thisItem =  $('.choose-container2').children().index(this);
                 if(thisItem == 3)
                     $('.choose-container2').children().eq(0).css('color','#f7f7f7');
-                else if(thisItem!=0)
+                else
                     $('.choose-container2').children().eq(0).css('color','#d4d4d4');
                 console.log(thisItem);
                 var s = -50+thisItem*50;
                 var ss=s+'px';
                 $('.choose-container2').css('bottom',ss);
             }
+            $(this).css('color','black');
         })
 
         $('.choose-list-title-cancel').click(function(){
@@ -157,6 +163,7 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container').css('height','0px');
+                $('.choose-container').hide();
                 $('.choose-box').css('height','0px');
                 clickFileType+=1;
             }
@@ -164,6 +171,7 @@ const app = angular.module('app.controller', [])
                 $('.choose-list').css('height', '0px');
                 $('.choose').css('height','0px');
                 $('.choose-container2').css('height','0px');
+                $('.choose-container2').hide();
                 $('.choose-box').css('height','0px');
                 clickPassType+=1;
             }

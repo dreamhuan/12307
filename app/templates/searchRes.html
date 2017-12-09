@@ -5,61 +5,87 @@
                 <i class="fa fa-angle-left fa-2x" ng-click="back()"></i>
             </div>
             <div class="col-xs-8 flex-center title">杭州<>上海</div>
-            <div class="col-xs-2 flex-center menu fa fa-bars"></div>
+            <div class="col-xs-2 flex-center menu fa fa-bars" ng-click="show()"></div>
+            <div class="drop_menu">
+                <div class=" fa fa-refresh" ng-click="refresh()">&nbsp;&nbsp;刷新</div>
+                <div class=" fa fa-filter">&nbsp;&nbsp;筛选</div>
+                <div class=" fa fa-download">&nbsp;保存本地</div>
+                <div class=" fa fa-share">&nbsp;分享好友</div>
+            </div>
         </div>
         <div class="date_selection row">
-            <div class="previous_day_btn col-xs-2 flex-center">前一天</div>
+            <div class="previous_day_btn col-xs-2 flex-center" ng-click="refresh()">前一天</div>
             <div class="current_day col-xs-8 flex-center">2017-12-03</div>
-            <div class="next_day_btn col-xs-2 flex-center">后一天</div>
+            <div class="next_day_btn col-xs-2 flex-center" ng-click="refresh()">后一天</div>
         </div>
     </div>
     <div class="fixed_box_substitution"></div>
     <div class="scroll_box">
-        <div class="train_detail row" ng-repeat="i in records" ng-click="determine()">
+        <div class="train_detail row" ng-repeat="i in records">
             <div class="row train_information">
-                <div class="train_name col-xs-2">G1344</div>
-                <div class="start_station col-xs-3">
-                    <div class="row flex">
-                        <div class="icon">过</div>
-                        <div class="station_name">杭州东</div>
-                    </div>
-                    <div class="row start_time">
-                        11：54
-                    </div>
-                </div>
-                <div class="cost_time col-xs-3">
-                    <div class="row ">
-                        <div class="fa fa-id-card-o flex-center"></div>
-                    </div>
-                    <div class="row flex">
-                        <div class="content">——————</div>
-                        <div class="angle_container">
-                            <span class="fa fa-angle-right fa-2x"></span>
+                <div ng-click="determine()">
+                    <div class="train_name col-xs-2">G1344</div>
+                    <div class="start_station col-xs-3">
+                        <div class="row flex">
+                            <div class="icon">过</div>
+                            <div class="station_name">杭州东</div>
+                        </div>
+                        <div class="row start_time">
+                            11：54
                         </div>
                     </div>
-                    <div class="row time">01小时00分</div>
-                </div>
-                <div class="terminal_station col-xs-3">
-                    <div class="row flex">
-                        <div class="icon">终</div>
-                        <div class="station_name">上海虹桥</div>
+                    <div class="cost_time col-xs-3">
+                        <div class="row ">
+                            <div class="fa fa-id-card-o flex-center"></div>
+                        </div>
+                        <div class="row flex">
+                            <div class="content">——————</div>
+                            <div class="angle_container">
+                                <span class="fa fa-angle-right fa-2x"></span>
+                            </div>
+                        </div>
+                        <div class="row time">01小时00分</div>
                     </div>
-                    <div class="row start_time">
-                        12：54
+                    <div class="terminal_station col-xs-3">
+                        <div class="row flex">
+                            <div class="icon">终</div>
+                            <div class="station_name">上海虹桥</div>
+                        </div>
+                        <div class="row start_time">
+                            12：54
+                        </div>
                     </div>
                 </div>
-                <div class="more_information fa fa-angle-down fa-2x col-xs-1 flex-center"></div>
+                <div class="more_information fa fa-angle-down fa-2x col-xs-1 flex-center"
+                     ng-click="click($index)"></div>
             </div>
-            <div class="seat_detail row no_padding">
+            <div class="seat_detail row no_padding" ng-click="determine()">
                 <div class="col-xs-3">特等:3张</div>
                 <div class="col-xs-3">一等:无</div>
                 <div class="col-xs-3">二等:无</div>
                 <div class="col-xs-2"></div>
             </div>
+            <div class="station_information row">
+                <div class="row flex desc">
+                    <div class="order flex-grow flex-center">站序</div>
+                    <div class="station_name flex-grow flex-center">站名</div>
+                    <div class="arriving_time flex-grow flex-center">到时</div>
+                    <div class="departing_time flex-grow flex-center">发时</div>
+                    <div class="stay flex-grow flex-center">停留</div>
+                </div>
+                <div class="row flex information" ng-repeat="i in stationData">
+                    <div class="order flex-grow flex-center">{{i.order}}</div>
+                    <div class="station_name flex-grow flex-center">{{i.stationName}}</div>
+                    <div class="arriving_time flex-grow flex-center">{{i.arrvingTime}}</div>
+                    <div class="departing_time flex-grow flex-center">{{i.departingTime}}</div>
+                    <div class="stay flex-grow flex-center">{{i.stayTime}}</div>
+                </div>
+            </div>
 
         </div>
+
     </div>
-    <div class="bottom_menu_substitution">  </div>
+    <div class="bottom_menu_substitution"></div>
     <div class="bottom_menu flex">
         <div class="sort_by_start_time flex-center flex-grow">发时
             <span class="fa fa-angle-up"></span>

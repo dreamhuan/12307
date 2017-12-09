@@ -22,10 +22,31 @@ const app = angular.module('app.controller', [])
         };
     })
 
-    .controller('searchResCtrl', function ($scope, $state) {
+    .controller('searchResCtrl', function ($scope, $state, StationService) {
         $scope.records = [
             1, 2, 3, 4, 5, 6, 7, 8, 9, 89, 10, 11, 12
         ];
+        StationService.getInfor()
+            .then(res => $scope.stationData = res.data);
+        $scope.click = function (currentIndex) {
+            let currentTarget = $(".train_detail").eq(currentIndex).find(".station_information");
+            let currentNoti = $(".train_detail").eq(currentIndex).find(".more_information");
+            if (currentTarget.css("display") === "block") {
+                currentTarget.css("display", "none");
+                currentNoti.css("-webkit-transform"," rotate(360deg)");
+            } else { 
+                currentTarget.css("display", "block");
+                currentNoti.css("-webkit-transform"," rotate(180deg)");
+            }
+        };
+        $scope.show=function () {
+            let target=$(".drop_menu");
+            if(target.css("display")==="block")target.css("display","none");
+            else target.css("display","block")
+        }
+        $scope.changeColor=function (currentIndex) {
+            
+        }
         $scope.determine = function () {
             $state.go('checkOrder');
         };
@@ -33,6 +54,25 @@ const app = angular.module('app.controller', [])
             window.location.replace('http://localhost:8080/#!/searchMsg');
             // history.go(-1);
         };
+        $scope.refresh=function () {
+            swal({
+                title: "刷新中",
+                text: "请稍等",
+                type: "info",
+                showLoaderOnConfirm: true,
+                onOpen: function(){
+                    swal.clickConfirm();
+                },
+                preConfirm: function() {
+                    return new Promise(function(resolve) {
+                        let i;
+                        for(i=0;i<1000000000;i++);
+                        swal.closeModal();
+                    });
+                },allowOutsideClick: false
+            });
+            $state.reload();
+        }
     })
 
     .controller('checkOrderCtrl', function ($scope, $state) {
@@ -394,7 +434,9 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('loginCtrl', function ($scope, $state) {
-
+        $scope.back = function () {
+            history.go(-1);
+        };
     })
 
     .controller('travelServiceCtrl', function ($scope, $state) {

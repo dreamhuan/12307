@@ -1,4 +1,7 @@
 .searchRes {
+    div{
+        box-sizing: border-box;
+    }
     .row {
         margin: 0px;
     }
@@ -54,7 +57,20 @@
                 color: white;
                 font-size: 1.5em;
                 background: #298ccf;
-
+            }
+            .drop_menu{
+                position: absolute;
+                display: none;
+                width: 100px;
+                top: 45px;
+                right: 0px;
+                z-index: 1000;
+                background: white;
+                div{
+                    border: #e5e5e5 1px solid;
+                    padding: 10px;
+                    display: block;
+                }
             }
         }
         .date_selection {
@@ -85,6 +101,7 @@
         height: 83px;
     }
     .scroll_box {
+        background: white;
         overflow-y: scroll;
         .train_detail {
             .train_information {
@@ -146,6 +163,7 @@
                     padding-top: 10px;
                     color: #50a5d8;
                 }
+
             }
             .seat_detail {
                 div {
@@ -154,8 +172,22 @@
             }
             border-bottom: #f0eff1 solid thin;
         }
+        .station_information {
+            display: none;
+
+            .desc {
+                color: #a4c6e1;
+                height: 20px;
+                border-top: #e5e5e5 1px solid;
+                border-bottom: #e5e5e5 1px solid;
+                background: #e5e7e9;
+            }
+            .information {
+                border-bottom: #e5e5e5 1px solid;
+            }
+        }
     }
-    .bottom_menu_substitution{
+    .bottom_menu_substitution {
         height: 55px;
     }
     .bottom_menu {

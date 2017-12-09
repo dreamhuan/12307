@@ -42,7 +42,8 @@ const app = angular.module('app.service', [])
         this.login = function (user) {
         };
 
-        this.signup = function (user) {
+        this.register = function (user) {
+            return $http.post(SystemService.getHostIP() + 'user', user);
         };
     })
 

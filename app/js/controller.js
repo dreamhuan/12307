@@ -371,8 +371,17 @@ const app = angular.module('app.controller', [])
         };
     })
 
-    .controller('registerCtrl', function ($scope, $state) {
-
+    .controller('registerCtrl', function ($scope, $state, UserService) {
+        $scope.next = function () {
+            let user = {
+                name: 123,
+                pwd: 456
+            };
+            UserService.register(user)
+                .then(data => console.log(data),
+                        err => console.log(err))
+                .catch(console.log.bind(console));
+        }
     })
 
     .controller('checkRegCtrl', function ($scope, $state) {

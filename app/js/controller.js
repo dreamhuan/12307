@@ -34,6 +34,23 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('checkOrderCtrl', function ($scope, $state) {
+        $scope.people = [
+            {
+                name: '傅凯琪',
+                id: '330902xxxxx7412',
+                level: '二等',
+                type: '成人票',
+            }, {
+                name: '傅凯琪',
+                id: '330902xxxxx7412',
+                level: '二等',
+                type: '成人票',
+            }
+        ];
+        $scope.remove = function (i) {
+            $scope.people.splice(i, 1);
+        };
+
         $scope.add = function () {
             $state.go('passengerList');
             localStorage.passengerList = 'checkOrder';
@@ -44,6 +61,18 @@ const app = angular.module('app.controller', [])
         };
         $scope.submit = function () {
             $state.go('checkPay');
+        };
+        $scope.selects = [1, 0, 0];
+        $scope.prices = [0, 1, 1];
+        $scope.select = function (i) {
+            $scope.selects = [0, 0, 0];
+            $scope.selects[i] = 1;
+            $scope.prices = [1, 1, 1];
+            $scope.prices[i] = 0;
+        };
+        $scope.showchoose = false;
+        $scope.hidechoose = function () {
+            $scope.showchoose = false;
         };
     })
 
@@ -67,131 +96,131 @@ const app = angular.module('app.controller', [])
         var thisItem = 0;
         $('.file-type').click(function () {
             thisItem = 0;
-            $('.choose-container').css('bottom','-50px');
-            $('.choose-container').children().eq(0).css('color','black');
-            $('.choose-container').children().eq(1).css('color','#d4d4d4');
-            $('.choose-container').children().eq(2).css('color','#d4d4d4');
-            $('.choose-container').children().eq(3).css('color','#d4d4d4');
+            $('.choose-container').css('bottom', '-50px');
+            $('.choose-container').children().eq(0).css('color', 'black');
+            $('.choose-container').children().eq(1).css('color', '#d4d4d4');
+            $('.choose-container').children().eq(2).css('color', '#d4d4d4');
+            $('.choose-container').children().eq(3).css('color', '#d4d4d4');
 
-            if(clickPassType%2==1){
+            if (clickPassType % 2 == 1) {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container2').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container2').css('height', '0px');
                 $('.choose-container2').hide();
-                $('.choose-box').css('height','0px');
-                clickPassType+=1;
+                $('.choose-box').css('height', '0px');
+                clickPassType += 1;
             }
-            clickFileType+=1;
-            if(clickFileType%2==1){
+            clickFileType += 1;
+            if (clickFileType % 2 == 1) {
                 $('.choose-list').css('height', '300px');
-                $('.choose').css('height','250px');
-                $('.choose-container').css('height','200px');
+                $('.choose').css('height', '250px');
+                $('.choose-container').css('height', '200px');
                 $('.choose-container').show();
-                $('.choose-box').css('height','50px');
+                $('.choose-box').css('height', '50px');
             }
-            else{
+            else {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container').css('height', '0px');
                 $('.choose-container').hide();
-                $('.choose-box').css('height','0px');
+                $('.choose-box').css('height', '0px');
             }
         })
         $('.pass-type').click(function () {
             thisItem = 0;
-            $('.choose-container2').css('bottom','-50px');
-            $('.choose-container2').children().eq(0).css('color','black');
-            $('.choose-container2').children().eq(1).css('color','#d4d4d4');
-            $('.choose-container2').children().eq(2).css('color','#d4d4d4');
-            $('.choose-container2').children().eq(3).css('color','#d4d4d4');
+            $('.choose-container2').css('bottom', '-50px');
+            $('.choose-container2').children().eq(0).css('color', 'black');
+            $('.choose-container2').children().eq(1).css('color', '#d4d4d4');
+            $('.choose-container2').children().eq(2).css('color', '#d4d4d4');
+            $('.choose-container2').children().eq(3).css('color', '#d4d4d4');
 
-            if(clickFileType%2==1){
+            if (clickFileType % 2 == 1) {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container').css('height', '0px');
                 $('.choose-container').hide();
-                $('.choose-box').css('height','0px');
-                clickFileType+=1;
+                $('.choose-box').css('height', '0px');
+                clickFileType += 1;
             }
-            clickPassType+=1;
-            if(clickPassType%2==1){
+            clickPassType += 1;
+            if (clickPassType % 2 == 1) {
                 $('.choose-list').css('height', '300px');
-                $('.choose').css('height','250px');
+                $('.choose').css('height', '250px');
                 $('.choose-container2').show();
-                $('.choose-container2').css('height','200px');
-                $('.choose-box').css('height','50px');
+                $('.choose-container2').css('height', '200px');
+                $('.choose-box').css('height', '50px');
             }
-            else{
+            else {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container2').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container2').css('height', '0px');
                 $('.choose-container2').hide();
-                $('.choose-box').css('height','0px');
+                $('.choose-box').css('height', '0px');
             }
         })
-        $('.choose-item').click(function(){
-           if(clickFileType%2==1){
-               $('.choose-container').children().eq(thisItem).css('color','#d4d4d4');
-               thisItem =  $('.choose-container').children().index(this);
-               var s = -50+thisItem*50;
-               var ss=s+'px';
-               if(thisItem == 3)
-                   $('.choose-container').children().eq(0).css('color','#f7f7f7');
-               else
-                   $('.choose-container').children().eq(0).css('color','#d4d4d4');
-               console.log(thisItem);
-               $('.choose-container').css('bottom',ss);
-           }
-            if(clickPassType%2==1){
-                $('.choose-container2').children().eq(thisItem).css('color','#d4d4d4');
-                thisItem =  $('.choose-container2').children().index(this);
-                if(thisItem == 3)
-                    $('.choose-container2').children().eq(0).css('color','#f7f7f7');
+        $('.choose-item').click(function () {
+            if (clickFileType % 2 == 1) {
+                $('.choose-container').children().eq(thisItem).css('color', '#d4d4d4');
+                thisItem = $('.choose-container').children().index(this);
+                var s = -50 + thisItem * 50;
+                var ss = s + 'px';
+                if (thisItem == 3)
+                    $('.choose-container').children().eq(0).css('color', '#f7f7f7');
                 else
-                    $('.choose-container2').children().eq(0).css('color','#d4d4d4');
+                    $('.choose-container').children().eq(0).css('color', '#d4d4d4');
                 console.log(thisItem);
-                var s = -50+thisItem*50;
-                var ss=s+'px';
-                $('.choose-container2').css('bottom',ss);
+                $('.choose-container').css('bottom', ss);
             }
-            $(this).css('color','black');
+            if (clickPassType % 2 == 1) {
+                $('.choose-container2').children().eq(thisItem).css('color', '#d4d4d4');
+                thisItem = $('.choose-container2').children().index(this);
+                if (thisItem == 3)
+                    $('.choose-container2').children().eq(0).css('color', '#f7f7f7');
+                else
+                    $('.choose-container2').children().eq(0).css('color', '#d4d4d4');
+                console.log(thisItem);
+                var s = -50 + thisItem * 50;
+                var ss = s + 'px';
+                $('.choose-container2').css('bottom', ss);
+            }
+            $(this).css('color', 'black');
         })
 
-        $('.choose-list-title-cancel').click(function(){
+        $('.choose-list-title-cancel').click(function () {
             thisItem = 0;
-            if(clickFileType%2==1){
+            if (clickFileType % 2 == 1) {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container').css('height', '0px');
                 $('.choose-container').hide();
-                $('.choose-box').css('height','0px');
-                clickFileType+=1;
+                $('.choose-box').css('height', '0px');
+                clickFileType += 1;
             }
-            if(clickPassType%2==1){
+            if (clickPassType % 2 == 1) {
                 $('.choose-list').css('height', '0px');
-                $('.choose').css('height','0px');
-                $('.choose-container2').css('height','0px');
+                $('.choose').css('height', '0px');
+                $('.choose-container2').css('height', '0px');
                 $('.choose-container2').hide();
-                $('.choose-box').css('height','0px');
-                clickPassType+=1;
+                $('.choose-box').css('height', '0px');
+                clickPassType += 1;
             }
-            $('.choose-container').css('bottom','-50px');
-            $('.choose-container').children().eq(0).css('color','black');
-            $('.choose-container').children().eq(1).css('color','#d4d4d4');
-            $('.choose-container').children().eq(2).css('color','#d4d4d4');
-            $('.choose-container').children().eq(3).css('color','#d4d4d4');
-            $('.choose-container2').css('bottom','-50px');
-            $('.choose-container2').children().eq(0).css('color','black');
-            $('.choose-container2').children().eq(1).css('color','#d4d4d4');
-            $('.choose-container2').children().eq(2).css('color','#d4d4d4');
-            $('.choose-container2').children().eq(3).css('color','#d4d4d4');
+            $('.choose-container').css('bottom', '-50px');
+            $('.choose-container').children().eq(0).css('color', 'black');
+            $('.choose-container').children().eq(1).css('color', '#d4d4d4');
+            $('.choose-container').children().eq(2).css('color', '#d4d4d4');
+            $('.choose-container').children().eq(3).css('color', '#d4d4d4');
+            $('.choose-container2').css('bottom', '-50px');
+            $('.choose-container2').children().eq(0).css('color', 'black');
+            $('.choose-container2').children().eq(1).css('color', '#d4d4d4');
+            $('.choose-container2').children().eq(2).css('color', '#d4d4d4');
+            $('.choose-container2').children().eq(3).css('color', '#d4d4d4');
         })
-        $('.choose-list-title-sure').click(function() {
-            if(clickFileType%2==1){
+        $('.choose-list-title-sure').click(function () {
+            if (clickFileType % 2 == 1) {
                 var tmp = $('.choose-container').children().eq(thisItem).text();
                 $('.file-type-text').val(tmp);
             }
-            if(clickPassType%2==1){
+            if (clickPassType % 2 == 1) {
                 var tmp = $('.choose-container2').children().eq(thisItem).text();
                 $('.pass-type-text').val(tmp);
             }
@@ -249,7 +278,7 @@ const app = angular.module('app.controller', [])
                 showCancelButton: true,
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
-            }).then(function(isConfirm) {
+            }).then(function (isConfirm) {
                 if (isConfirm === true) {
                     $state.go('checkRefund');
 
@@ -317,7 +346,7 @@ const app = angular.module('app.controller', [])
                 showCancelButton: true,
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
-            }).then(function(isConfirm) {
+            }).then(function (isConfirm) {
                 if (isConfirm === true) {
                     $state.go('refundSuccess');
 

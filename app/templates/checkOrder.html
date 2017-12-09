@@ -1,59 +1,86 @@
 <div class="checkOrder">
     <div class="title">
-        <i class="iconfont icon-fanhui"  ng-click="back()"></i>
+        <i class="iconfont icon-fanhui" ng-click="back()"></i>
         <div class="content">确认订单</div>
     </div>
     <div class="choose_time">
         <div class="pre_day">前一天</div>
-        <div class="this_day">2017-10-19</div>
+        <div class="this_day">2017-12-31</div>
         <div class="next_day">后一天</div>
     </div>
     <div class="ticket">
         <div class="detail">
             <div class="from">
                 <div>杭州东</div>
-                <div class="blue">12:50出发</div>
-                <div>南昌西</div>
+                <div class="blue">12:00出发</div>
+                <div>上海虹桥</div>
             </div>
             <div class="time">
-                <div class="name">G2355</div>
-                <div></div>
-                <div>49分钟</div>
+                <div class="name">G1354</div>
+                <div class="arrow">
+                    <div class="fa fa-id-card-o flex-center"></div>
+                    <div class="flex">
+                        <div class="content">——————</div>
+                        <div class="angle_container">
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </div>
+                    </div>
+                </div>
+                <div>01小时15分钟</div>
             </div>
             <div class="to">
-                <div>余姚北</div>
-                <div class="blue">13:39到达</div>
+                <div>上海虹桥</div>
+                <div class="blue">13:15到达</div>
                 <div>宁波</div>
             </div>
         </div>
         <div class="seat">
-            <div class="shang">
+            <div class="shang" ng-class="{select:selects[0]}" ng-click="select(0)">
                 <div class="type">商务</div>
                 <div>3张</div>
-                <div class="price">￥153.5</div>
+                <div ng-class="{price:prices[0]}">￥153.5</div>
             </div>
-            <div class="yi">
+            <div class="yi" ng-class="{select:selects[1]}" ng-click="select(1)">
                 <div class="type">一等</div>
                 <div>2张</div>
-                <div class="price">￥82.0</div>
+                <div ng-class="{price:prices[1]}">￥82.0</div>
             </div>
-            <div class="er">
+            <div class="er" ng-class="{select:selects[2]}" ng-click="select(2)">
                 <div class="type">二等</div>
                 <div>有</div>
-                <div>￥48.5</div>
+                <div ng-class="{price:prices[2]}">￥48.5</div>
             </div>
         </div>
     </div>
     <div class="passenger">
+        <div class="list" ng-repeat="p in people">
+            <div>{{p.name}}</div>
+            <div>{{p.id}}</div>
+            <div class="blue">{{p.level}}</div>
+            <div class="blue">{{p.type}}</div>
+            <div class="trash" ng-click="remove($index)"><i class="fa fa-trash"></i></div>
+        </div>
         <div class="add" ng-click="add()">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             添加乘客
         </div>
     </div>
-    <div class="choose_seat">
+    <div class="choose_seat" ng-click="showchoose = true">
         <div>选座服务</div>
         <div><i class="fa fa-angle-right" aria-hidden="true"></i></div>
     </div>
     <div class="submit" ng-click="submit()">提交订单</div>
+    <div class="choose_bg" ng-if="showchoose">
+        <div class="choose">
+            <div class="head">
+                <div ng-click="hidechoose()">取消</div>
+                <div>请选择1个座位</div>
+                <div ng-click="hidechoose()">确认</div>
+            </div>
+            <div class="seat">
+                <img src="../img/seat.png" alt="seat">
+            </div>
+        </div>
+    </div>
     <app-bottom></app-bottom>
 </div>

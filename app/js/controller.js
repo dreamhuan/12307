@@ -427,10 +427,15 @@ const app = angular.module('app.controller', [])
         $scope.back = function () {
             history.go(-1);
         };
+        $scope.next = function () {
+            $state.go('checkReg');
+        }
     })
 
     .controller('checkRegCtrl', function ($scope, $state) {
-
+        $scope.submit = function () {
+            $state.go('searchMsg');
+        }
     })
 
     .controller('loginCtrl', function ($scope, $state) {

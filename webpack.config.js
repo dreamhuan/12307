@@ -44,7 +44,7 @@ module.exports = {
         }),
 
         //自动启动浏览器
-        // new OpenBrowserPlugin({url: 'http://localhost:8080'})
+        new OpenBrowserPlugin({url: 'http://localhost:8080'})
     ],
 
 //dev 服务器

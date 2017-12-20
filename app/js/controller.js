@@ -33,19 +33,19 @@ const app = angular.module('app.controller', [])
             let currentNoti = $(".train_detail").eq(currentIndex).find(".more_information");
             if (currentTarget.css("display") === "block") {
                 currentTarget.css("display", "none");
-                currentNoti.css("-webkit-transform"," rotate(360deg)");
-            } else { 
+                currentNoti.css("-webkit-transform", " rotate(360deg)");
+            } else {
                 currentTarget.css("display", "block");
-                currentNoti.css("-webkit-transform"," rotate(180deg)");
+                currentNoti.css("-webkit-transform", " rotate(180deg)");
             }
         };
-        $scope.show=function () {
-            let target=$(".drop_menu");
-            if(target.css("display")==="block")target.css("display","none");
-            else target.css("display","block")
+        $scope.show = function () {
+            let target = $(".drop_menu");
+            if (target.css("display") === "block") target.css("display", "none");
+            else target.css("display", "block")
         }
-        $scope.changeColor=function (currentIndex) {
-            
+        $scope.changeColor = function (currentIndex) {
+
         }
         $scope.determine = function () {
             $state.go('checkOrder');
@@ -54,22 +54,22 @@ const app = angular.module('app.controller', [])
             window.location.replace('http://localhost:8080/#!/searchMsg');
             // history.go(-1);
         };
-        $scope.refresh=function () {
+        $scope.refresh = function () {
             swal({
                 title: "刷新中",
                 text: "请稍等",
                 type: "info",
                 showLoaderOnConfirm: true,
-                onOpen: function(){
+                onOpen: function () {
                     swal.clickConfirm();
                 },
-                preConfirm: function() {
-                    return new Promise(function(resolve) {
+                preConfirm: function () {
+                    return new Promise(function (resolve) {
                         let i;
-                        for(i=0;i<1000000000;i++);
+                        for (i = 0; i < 1000000000; i++) ;
                         swal.closeModal();
                     });
-                },allowOutsideClick: false
+                }, allowOutsideClick: false
             });
             $state.reload();
         }
@@ -210,7 +210,7 @@ const app = angular.module('app.controller', [])
                     $('.choose-container').children().eq(0).css('color', '#f7f7f7');
                 else
                     $('.choose-container').children().eq(0).css('color', '#d4d4d4');
-                console.log(thisItem);
+                // console.log(thisItem);
                 $('.choose-container').css('bottom', ss);
             }
             if (clickPassType % 2 == 1) {
@@ -220,7 +220,7 @@ const app = angular.module('app.controller', [])
                     $('.choose-container2').children().eq(0).css('color', '#f7f7f7');
                 else
                     $('.choose-container2').children().eq(0).css('color', '#d4d4d4');
-                console.log(thisItem);
+                // console.log(thisItem);
                 var s = -50 + thisItem * 50;
                 var ss = s + 'px';
                 $('.choose-container2').css('bottom', ss);
@@ -284,6 +284,9 @@ const app = angular.module('app.controller', [])
     })
 
     .controller('payChoiceCtrl', function ($scope, $state) {
+        $scope.back = function () {
+            history.go(-1);
+        };
         $scope.finish = function () {
             $state.go('orderDetail');
         };
@@ -434,6 +437,7 @@ const app = angular.module('app.controller', [])
 
     .controller('checkRegCtrl', function ($scope, $state) {
         $scope.submit = function () {
+            swal('成功', '注册成功!', 'success');
             $state.go('searchMsg');
         }
     })
@@ -441,6 +445,18 @@ const app = angular.module('app.controller', [])
     .controller('loginCtrl', function ($scope, $state) {
         $scope.back = function () {
             history.go(-1);
+        };
+        $scope.reg = function () {
+            $state.go('register');
+        };
+        $scope.user = {
+            name: 'dreamfkq',
+            pwd: '123456'
+        };
+        $scope.login = function () {
+            console.log($scope.user);
+            swal('成功', '登录成功!', 'success');
+            $state.go('searchMsg');
         };
     })
 

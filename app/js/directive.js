@@ -18,7 +18,7 @@ const app = angular.module('app.directive', [])
 
                 };
                 $scope.register = function () {
-                    $state.go('register');
+                    $state.go('login');
                 };
                 $scope.orderDetail = function () {
                     $state.go('orderDetail');

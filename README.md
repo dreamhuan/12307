@@ -5,6 +5,7 @@
 按顺序执行以下命令
 1. `npm i -g yarn`
 1. `yarn`
+1. `npm run data`
 1. `npm run dev`
 
 命名一律用小驼峰，即第2个单词开始首字母大写（css class名除外，那个用下划线分隔单词）

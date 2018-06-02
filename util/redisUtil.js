@@ -1,13 +1,14 @@
+const async = require('async');
 const redis = require('redis');
 const bluebird = require('bluebird');
 //使redis避免回调地狱
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
-//默认redis客户端运行在localhost:6379端口，如果需要修改可以在createClient(username,port)来指定
-const UserAccountModel = require('../models/UserAccount').UserAccountModel;
-const async = require('async');
-const client = redis.createClient();
 
+const UserAccountModel = require('../models/UserAccount').UserAccountModel;
+
+//默认redis客户端运行在localhost:6379端口，如果需要修改可以在createClient(username,port)来指定
+const client = redis.createClient();
 
 client.on('connect', function () {
     console.log('=============redis数据库连接成功=============');
@@ -72,48 +73,3 @@ function cacheOneUser(userid, topcallback) {
         })
     })
 }
-
-
-//暴露根据_id获取用户信息的API接口,参数接受userid
-module.exports.getUser = function (userid) {
-    let promise = client.hgetallAsync(userid);
-    return promise;
-};
-
-
-module.exports.updateUser = function (userid, option, callback) {
-    UserAccountModel.findByIdAndUpdate(userid, option, {new: true}, function (err, doc) {
-        if (err) {
-            callback(err);
-            return;
-        }
-        client.hmset(userid, doc._doc, function (err) {
-            if (err) {
-                callback(err);
-                return;
-            }
-            callback(null, doc._doc);
-        })
-    })
-};
-
-
-exports.publishRedPacketTakers = function (redPacketId, takersArray) {
-    for (let i = 0; i < takersArray.length; i++) {
-        client.rpush(redPacketId, JSON.stringify(takersArray[i]), function (err, data) {
-            if (err) console.log('发布红包数据到redis发生错误： ' + err);
-        })
-    }
-};
-
-
-exports.popRedPacketTaker = function (redPacketId, callback) {
-    client.rpop(redPacketId, function (err, data) {
-        if (err) {
-            console.log('发布红包数据到redis发生错误： ' + err);
-            callback(err, null);
-        } else {
-            callback(null, data);
-        }
-    })
-};
